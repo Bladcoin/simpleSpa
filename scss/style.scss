@@ -1,0 +1,560 @@
+@import './modal.scss';
+@font-face {
+  font-family: MyRobotoLight;
+  src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: MyRobotoRegular;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: MyRobotoMedium;
+  src: url(../fonts/Roboto-Medium.ttf);
+}
+
+// Colors
+$white: #fff;
+$link_color: #4f5ca9;
+$select_bg: #273795;
+$orange: #ff6700;
+$grey: #a5afec;
+$blue: #3748aa;
+$green: #0baf4f;
+
+body {
+  font-family: "MyRobotoLight", sans-serif;
+}
+.button {
+  height: 60px;
+  width: 190px;
+  box-shadow: 0px 20px 40px #0b1a73;
+  border-radius: 4px;
+  border: none;
+  color: $white;
+  font-size: 18px;
+  font-family: "MyRobotoRegular";
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  max-width: 1108px; /*максимальная ширина может иметь другое значение*/
+  margin: 0 auto;
+}
+
+.fas.fa-chevron-right {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.fas.fa-chevron-left {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+// Загаловок
+.title {
+  h1 {
+    font-weight: 100;
+    font-size: 40px;
+  }
+}
+
+.cost-title {
+  max-width: 220px;
+  color: $white;
+  font-size: 20px;
+}
+
+.price {
+  font-family: "MyRobotoMedium", sans-serif;
+  color: $orange;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 92.58%;
+}
+
+.form {
+  display: grid;
+}
+
+.form-group {
+  label {
+    display: block;
+    font-family: "MyRobotoMedium", sans-serif;
+    color: $white;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .__select {
+    // Select
+    background: $select_bg;
+    border-radius: 4px;
+    width: 350px;
+    max-height: 40px;
+    height: 100%;
+    background-image: url("../img/Group96.png");
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 50%;
+    border: none;
+    font-family: "MyRobotoRegular", sans-serif;
+    font-size: 14px;
+    color: $white;
+    position: relative;
+    &[data-state="active"] {
+      .__select__content {
+        opacity: 1;
+      }
+      .__select__label {
+        max-height: 40px;
+      }
+    }
+  }
+
+  .__select__title {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  .__select__content {
+    position: absolute;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    z-index: 8;
+  }
+  .__select__input {
+    display: none;
+  }
+  .__select__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    max-height: 0;
+    font-size: 14px;
+    padding: 0 16px;
+    color: $orange;
+    transition: all 0.2s ease-out;
+    margin: 0;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      background-color: $orange !important;
+      color: #ffffff;
+    }
+  }
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    margin-bottom: 30px;
+  }
+  &:nth-child(3) {
+    grid-row: 2 / 3;
+  }
+  &:nth-child(4) {
+    grid-row: 2 / 3;
+  }
+  &:nth-child(5) {
+    grid-row: 2 / 3;
+  }
+  .__select__active {
+    background-color: white;
+    color: #3748aa;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom: 1px solid #3748aa;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.form-group-mini {
+  display: flex;
+  justify-content: space-between;
+  .form-group-block {
+    .main-index__form__data {
+      width: 150px;
+      background: $select_bg;
+      border-radius: 4px;
+      max-height: 40px;
+      height: 100%;
+      background-image: url("../img/calendar.png");
+      background-repeat: no-repeat;
+      background-position-x: 97%;
+      background-position-y: 50%;
+      border: none;
+      font-family: "MyRobotoRegular", sans-serif;
+      font-size: 14px;
+      color: $white;
+      padding: 7px 7px;
+      &::-webkit-calendar-picker-indicator {
+        color: rgba(0, 0, 0, 0);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.outcome {
+  display: grid;
+  margin-top: 35px;
+  .cost {
+    border: 1px solid $white;
+    border-radius: 4px;
+    display: grid;
+  }
+}
+
+.main {
+  background-color: #3748aa;
+  height: 100%;
+  padding: 100px 0 160px;
+}
+
+// Шапка
+header {
+  .header__block {
+    margin-top: 219px;
+  }
+  ul.breadcrumb {
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-between;
+    li {
+      font-size: 13px;
+      font-family: "MyRobotoRegular", sans-serif;
+      a {
+        color: $link_color;
+        text-decoration: none;
+        border-bottom: 1px $link_color dashed;
+        &:hover {
+          color: #01447e;
+          text-decoration: underline;
+        }
+      }
+    }
+    li + li:before {
+      padding: 8px;
+      color: black;
+      content: ">";
+    }
+  }
+
+  .header__title {
+    margin-top: 36px;
+    margin-bottom: 320px;
+  }
+}
+// Шапка
+
+// Index.html setting
+
+.main-index {
+  .main-index__title {
+    margin-bottom: 67px;
+    h1 {
+      color: $white;
+    }
+  }
+  .main-index__form {
+    grid-gap: 0 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-index__outcome {
+    grid-auto-flow: column;
+    align-items: start;
+    .main-index__cost {
+      grid-auto-flow: column;
+      max-width: 488px;
+      width: 100%;
+      padding: 25px 60px 30px 64px;
+      align-items: end;
+    }
+    .main-index__buttons {
+      justify-self: end;
+      .main-index__button {
+        background-color: $green;
+      }
+    }
+  }
+}
+
+// Page.html setting
+.main-page {
+  .main-page__form {
+    grid-auto-flow: column;
+    grid-gap: 0 30px;
+    grid-template-columns: repeat(4, 1fr);
+    .main-page__form__group {
+      grid-row: 1 / 2;
+      .main-page__form__input {
+        max-width: 255px;
+        width: 100%;
+        height: 40px;
+        background: $select_bg;
+        border-radius: 4px;
+        border: none;
+        padding: 10px 0px 10px 15px;
+        color: $white;
+        &::placeholder {
+          font-family: "MyRobotoRegular", sans-serif;
+          color: $white;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .main-page__title {
+    margin-bottom: 50px;
+    h1 {
+      color: $white;
+    }
+  }
+
+  .main-page__user {
+    display: inline-block;
+    margin-bottom: 21px;
+    border-bottom: 3px solid #ffffff;
+    p {
+      font-family: "MyRobotoMedium", sans-serif;
+      color: $white;
+      font-size: 20px;
+    }
+  }
+
+  .main-page__outcome {
+    grid-auto-flow: row;
+    grid-gap: 44px 0;
+    justify-items: end;
+    .main-page__cost {
+      min-width: 100%;
+      padding: 40px 64px;
+      grid-template-columns: auto auto 1fr;
+      grid-gap: 30px 40px;
+      grid-template-rows: 1fr 1fr;
+      align-items: end;
+      .main-page__content {
+        grid-row: 1 / 2;
+        span {
+          font-family: "MyRobotoMedium";
+          font-size: 13px;
+          color: $white;
+        }
+        p {
+          font-family: "MyRobotoRegular";
+          font-size: 12px;
+          color: $grey;
+        }
+      }
+      .main-page__cost__title {
+        max-width: 217px;
+        grid-row: 2 / 3;
+      }
+      .main-page__cost__price {
+        grid-row: 2 / 3;
+      }
+    }
+    .main-page__buttons {
+      justify-self: end;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 0 27px;
+      .main-index__button {
+        background-color: $green;
+      }
+      .main-index__back__button {
+        background-color: $blue;
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .container {
+    max-width: 995px;
+    padding: 0 15px;
+  }
+
+  .form-group-mini {
+    gap: 0 50px;
+    justify-content: start;
+  }
+
+  // index html
+  .main-index__form {
+    grid-template-rows: 1fr 1fr 1fr;
+    .main-index__form__group:nth-child(2) {
+      justify-self: end;
+    }
+    .main-index__form__group:nth-child(4) {
+      justify-self: end;
+    }
+    .main-index__form__group:nth-child(5) {
+      grid-row: 3 / 4;
+    }
+  }
+}
+
+@media (max-width: 995px) {
+  .container {
+    max-width: 730px;
+    padding: 0 15px;
+  }
+   
+  .__select {
+    max-width: 250px;
+    width: 100%;
+  }
+
+  .form-group-mini {
+    flex-direction: column;
+    gap: 20px 0;
+    .form-group-block {
+      .main-index__form__data {
+        width: 250px;
+      }
+    }
+  }
+
+  .main-index__form {
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+
+  // page.html 
+  .main-page__form {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: row!important;
+    .main-page__form__group:nth-child(3) {
+      grid-row: 2 / 3;
+    }
+    .main-page__form__group:nth-child(4) {
+      grid-row: 2 / 3;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .container {
+    max-width: 540px;
+    padding: 0 15px;
+  }
+
+  .form-group {
+    label {
+      font-size: 15px;
+    }
+
+    .__select {
+      font-size: 12px;
+      height: 30px;
+      background-size: 20px;
+      max-width: 200px;
+      width: 100%;
+      .__select__title {
+        padding: 7px 16px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .form-group-mini {
+    .form-group-block {
+      .main-index__form__data {
+        width: 200px;
+        max-height: 30px;
+        background-size: 20px;
+      }
+    }
+  }
+  // index html
+  .main-index .main-index__outcome .main-index__cost {
+    padding: 15px;
+  }
+
+  .cost-title {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 14px;
+  }
+
+  .button {
+    height: 40px;
+    width: 170px;
+    font-size: 14px;
+  }
+
+  .fas.fa-chevron-right {
+    font-size: 10px;
+    margin-left: 6px;
+  }
+
+  .main-index__form {
+    grid-template-rows: 1fr 1fr 1fr;
+    .main-index__form__group:nth-child(2) {
+      justify-self: end;
+      width: 200px;
+    }
+    .main-index__form__group:nth-child(4) {
+      justify-self: end;
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    max-width: 440px;
+    padding: 0 15px;
+  }
+
+  .main-index__form {
+    grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr !important;
+    .main-index__form__group {
+      width: 100% !important;
+      &:nth-child(2) {
+        grid-row: 2 / 3;
+      }
+      &:nth-child(3) {
+        grid-row: 3 / 4;
+      }
+      &:nth-child(4) {
+        grid-row: 4 / 5;
+      }
+      &:nth-child(5) {
+        grid-row: 5 / 6;
+      }
+    }
+  }
+
+  .form-group-mini {
+    .form-group-block {
+      .main-index__form__data {
+        width: 100%;
+      }
+    }
+  }
+
+  .__select {
+    max-width: 100% !important;
+  }
+
+  .main-index__outcome{
+    grid-auto-flow: row!important;
+    grid-gap: 20px 0px;
+  }
+
+  .main-index__cost {
+    .main-index__cost__price {
+      justify-self: end;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Spa</title>
+    <link rel="stylesheet" href="/css/icons.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+
+            <div class="header__block block">
+                <ul class="breadcrumb">
+                    <li><a href="#">Главная</a></li>
+                    <li>Форма</li>
+                </ul>
+            </div>
+
+            <div class="header__title title">
+                <h1>Для тестового задания</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-page main">
+
+        <div class="container">
+
+            <div class="main-page__title title">
+                <h1>Шаг 2</h1>
+            </div>
+
+            <div class="main-page__user">
+                <p>Пользователь</p>
+            </div>
+
+            <form action="#" class="main-page__form form">
+
+                <div class="main-page__form__group form-group">
+                    <label for="">Выберите страну</label>
+                    <input type="text" placeholder="Введите имя" class="main-page__form__input">
+                </div>
+
+                <div class="main-page__form__group form-group">
+                    <label for="">Тип визы</label>
+                    <input type="text" placeholder="Введите фамилию" class="main-page__form__input">
+                </div>
+                <!-- Блок с двумя мини блоками -->
+                <div class="main-page__form__group form-group form-group-mini">
+
+                    <div class="main-page__form__block form-group-block">
+
+                        <label for="">Въезд</label>
+                        <input type="date" name="" id="" class="main-index__form__data"> 
+
+                    </div>
+
+                </div>
+
+                <div class="main-page__form__group form-group">
+                    <label for="">Количество заездов</label>
+                    <div class="__select" data-state="">
+                        <div class="__select__title" data-default="Option 0">Option 0</div>
+                        <div class="__select__content">
+                            <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect"
+                                checked />
+                            <label for="singleSelect0" class="__select__label">Option 0</label>
+                            <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect1" class="__select__label">Option 1</label>
+                            <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect2" class="__select__label">Option 2</label>
+                            <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect3" class="__select__label">Option 3</label>
+                            <input id="singleSelect4" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect4" class="__select__label">Option 4</label>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="main-page__outcome outcome">
+
+                <div class="main-page__cost cost">
+
+                    
+                    
+                    <div class="main-page__content">
+                        <span>Виза</span>
+                        <p>Страна: Россия</p>
+                        <p>Вид визы: Транзитная виза</p>
+                    </div>
+
+                    <div class="main-page__content">
+                        <p>Въезд: 11.12.2019</p>
+                        <p>Время обработки: 3-4 рабочих дня</p>
+                    </div>
+
+                    <div class="main-page__cost__title cost-title">
+                        <p>Предварительная цена:</p>
+                    </div>
+                    <div class="main-page__cost__price price">
+                        <p>&#8364; 10.99</p>
+                    </div>
+
+                </div>
+
+
+                <div class="main-page__buttons">
+                    <button class="main-index__back__button button"><i class="fas fa-chevron-left"></i> Назад </button>
+                    <button class="main-index__button button">Продолжить <i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
