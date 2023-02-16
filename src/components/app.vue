@@ -19,18 +19,6 @@ export default {
     mainComponent,
   },
 
-  secondBranch() {
-    return;
-  },
-
-  functionFromMaster() {
-    return;
-  },
-
-  thirdFunction() {
-    return;
-  },
-
   fourthFunction() {
     return;
   }
