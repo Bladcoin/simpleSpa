@@ -5,7 +5,7 @@
       <router-view></router-view>
     </transition>
 
-  </div>
+</div>
 </template>
 <style lang="css" src="../../css/normalize.css"></style>
 <style lang="sass" src="../../scss/style.scss"></style>
@@ -18,8 +18,11 @@ export default {
     headerComponent,
     mainComponent,
   },
+
+  secondBranch() {
+    return;
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

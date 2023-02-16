@@ -4,8 +4,8 @@ import store from './store.js'
 import router from './router.js'
 
 new Vue({
-    el:"#app",
-    render: h => h( App ),
+    el: "#app",
+    render: h => h(App),
     store,
     router
 })
