@@ -18,10 +18,6 @@ export default {
     headerComponent,
     mainComponent,
   },
-
-  secondBranch() {
-    return;
-  }
 };
 </script>
 
