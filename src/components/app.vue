@@ -29,6 +29,10 @@ export default {
 
   thirdFunction() {
     return;
+  },
+
+  fourthFunction() {
+    return;
   }
 };
 </script>
