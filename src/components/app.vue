@@ -19,6 +19,10 @@ export default {
     mainComponent,
   },
 
+  secondBranch() {
+    return;
+  },
+
   functionFromMaster() {
     return;
   }
